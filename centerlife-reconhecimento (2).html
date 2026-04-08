@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CenterLife+ — Guia de Reconhecimento de Marca</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2e;
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --cream: #f5f0e8;
+    --red: #e63946;
+    --green: #2ec4b6;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+  }
+
+  .hero-label {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 12vw, 110px);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero-title span {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    display: block;
+    font-size: 0.55em;
+    letter-spacing: 4px;
+  }
+
+  .hero-sub {
+    margin-top: 24px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    max-width: 340px;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  .hero-badge {
+    margin-top: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 13px;
+    color: var(--gold-light);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 80px 24px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 8vw, 54px);
+    line-height: 1;
+    margin-bottom: 32px;
+  }
+
+  /* PILARES */
+  .pillars {
+    background: rgba(255,255,255,0.03);
+    border-top: 1px solid rgba(201,168,76,0.2);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .pillar-card {
+    display: flex;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    animation: fadeUp 0.6s both;
+  }
+
+  .pillar-card:last-child { border-bottom: none; }
+
+  .pillar-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: rgba(201,168,76,0.2);
+    line-height: 1;
+    min-width: 48px;
+  }
+
+  .pillar-content h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--gold-light);
+  }
+
+  .pillar-content p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+  }
+
+  /* CHECKLIST */
+  .checklist-section { padding-top: 0; }
+
+  .check-group {
+    margin-bottom: 36px;
+  }
+
+  .check-group-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .check-item:hover { padding-left: 6px; }
+
+  .check-box {
+    width: 20px; height: 20px;
+    border-radius: 4px;
+    border: 1.5px solid rgba(201,168,76,0.4);
+    flex-shrink: 0;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    font-size: 12px;
+  }
+
+  .check-item.done .check-box {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+  }
+
+  .check-text {
+    flex: 1;
+  }
+
+  .check-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+
+  .check-text span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+  }
+
+  .check-priority {
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .p-alta { background: rgba(230,57,70,0.15); color: #ff6b75; border: 1px solid rgba(230,57,70,0.3); }
+  .p-media { background: rgba(201,168,76,0.15); color: var(--gold-light); border: 1px solid rgba(201,168,76,0.3); }
+  .p-baixa { background: rgba(46,196,182,0.12); color: var(--green); border: 1px solid rgba(46,196,182,0.25); }
+
+  /* CONTENT FORMULA */
+  .formula-section {
+    background: linear-gradient(135deg, rgba(201,168,76,0.08) 0%, rgba(13,27,46,0) 60%);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 16px;
+    padding: 32px 24px;
+    margin-top: -20px;
+    margin-bottom: 40px;
+  }
+
+  .formula-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  .formula-item {
+    flex: 1;
+    min-width: 70px;
+    text-align: center;
+    background: rgba(255,255,255,0.04);
+    border-radius: 10px;
+    padding: 16px 8px;
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .formula-item .pct {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--gold);
+    display: block;
+  }
+
+  .formula-item .label {
+    font-size: 10px;
+    color: rgba(255,255,255,0.45);
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+  }
+
+  /* BIO REWRITE */
+  .bio-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+
+  .bio-box.before { border-color: rgba(230,57,70,0.3); }
+  .bio-box.after { border-color: rgba(201,168,76,0.4); background: rgba(201,168,76,0.05); }
+
+  .bio-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .bio-box.before .bio-label { color: #ff6b75; }
+  .bio-box.after .bio-label { color: var(--gold); }
+
+  .bio-text {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .bio-text strong { color: white; }
+
+  /* PROGRESS BAR */
+  .progress-section {
+    background: rgba(255,255,255,0.03);
+    border-radius: 16px;
+    padding: 28px 20px;
+    margin-bottom: 60px;
+  }
+
+  .progress-item { margin-bottom: 20px; }
+  .progress-item:last-child { margin-bottom: 0; }
+
+  .progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+
+  .progress-header span:last-child { color: var(--gold); font-weight: 600; }
+
+  .progress-bar-bg {
+    height: 6px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    border-radius: 100px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transform-origin: left;
+    animation: grow 1.2s ease-out both;
+  }
+
+  @keyframes grow {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 40px 24px 60px;
+    color: rgba(255,255,255,0.25);
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  footer strong { color: var(--gold); }
+
+  /* Progress bar widths */
+  .w-25 { width: 25%; }
+  .w-40 { width: 40%; }
+  .w-60 { width: 60%; }
+  .w-70 { width: 70%; }
+  .w-80 { width: 80%; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-label">Análise Estratégica de Marca</p>
+  <h1 class="hero-title">
+    CENTER<br>LIFE+
+    <span>Como ser reconhecido</span>
+  </h1>
+  <p class="hero-sub">O perfil tem potencial. Faltam os elementos certos para transformar visitantes em alunos.</p>
+  <div class="hero-badge">📍 Ipu, CE — Academia Local com Potencial Regional</div>
+</div>
+
+<!-- PILARES DE RECONHECIMENTO -->
+<section class="pillars">
+  <p class="section-tag">Fundação</p>
+  <h2 class="section-title">Os 5 Pilares do Reconhecimento</h2>
+
+  <div class="pillar-card">
+    <div class="pillar-number">01</div>
+    <div class="pillar-content">
+      <h3>Identidade Clara</h3>
+      <p>As pessoas precisam entender em 3 segundos o que é a CenterLife, para quem é e onde fica. Hoje isso não está explícito na bio.</p>
+    </div>
+  </div>
+
+  <div class="pillar-card">
+    <div class="pillar-number">02</div>
+    <div class="pillar-content">
+      <h3>Consistência Visual</h3>
+      <p>Azul marinho + dourado é forte. Mas o feed mistura estilos. Cada post precisa parecer da mesma marca, instantaneamente.</p>
+    </div>
+  </div>
+
+  <div class="pillar-card">
+    <div class="pillar-number">03</div>
+    <div class="pillar-content">
+      <h3>Prova Social</h3>
+      <p>Resultados de alunos, depoimentos, antes e depois — nada disso está em destaque. É o principal motor de confiança de uma academia.</p>
+    </div>
+  </div>
+
+  <div class="pillar-card">
+    <div class="pillar-number">04</div>
+    <div class="pillar-content">
+      <h3>Autoridade de Conteúdo</h3>
+      <p>Dicas de treino, nutrição e saúde publicadas regularmente posicionam a marca como referência — não só como vendedora de plano.</p>
+    </div>
+  </div>
+
+  <div class="pillar-card">
+    <div class="pillar-number">05</div>
+    <div class="pillar-content">
+      <h3>Chamada para Ação</h3>
+      <p>Cada post, cada story, cada destaque precisa de um próximo passo claro: "Venha treinar", "Fale no WhatsApp", "Faça sua matrícula".</p>
+    </div>
+  </div>
+</section>
+
+<!-- BIO REWRITE -->
+<section>
+  <p class="section-tag">Correção Imediata</p>
+  <h2 class="section-title">Reescrita da Bio</h2>
+
+  <div class="bio-box before">
+    <p class="bio-label">❌ Atual — Vaga</p>
+    <p class="bio-text">
+      🧑‍⚕️ @drabeatrizpontes<br>
+      A mudança que o seu futuro precisa! 💙<br>
+      Seg à sexta 5h às 22h<br>
+      Sábado 8h às 12h
+    </p>
+  </div>
+
+  <div class="bio-box after">
+    <p class="bio-label">✅ Sugerida — Direta e Vendedora</p>
+    <p class="bio-text">
+      <strong>🏋️ Academia em Ipu-CE</strong><br>
+      💪 Musculação · Aulas · Acompanhamento<br>
+      📍 Nova Aldeia — mensalidade a partir de R$100<br>
+      🕐 Seg–Sex 5h–22h · Sáb 8h–12h<br>
+      <strong>👇 Planos, matrículas e localização</strong>
+    </p>
+  </div>
+</section>
+
+<!-- FÓRMULA DE CONTEÚDO -->
+<section style="padding-top:0">
+  <p class="section-tag">Estratégia de Conteúdo</p>
+  <h2 class="section-title">Mix Ideal de Posts</h2>
+
+  <div class="formula-section">
+    <p style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.7">Para crescer e converter seguidores em alunos, distribua o conteúdo assim:</p>
+    <div class="formula-row">
+      <div class="formula-item">
+        <span class="pct">35%</span>
+        <p class="label">Prova Social<br><em style="color:rgba(255,255,255,0.3)">resultados, alunos</em></p>
+      </div>
+      <div class="formula-item">
+        <span class="pct">25%</span>
+        <p class="label">Educação<br><em style="color:rgba(255,255,255,0.3)">treino, saúde</em></p>
+      </div>
+      <div class="formula-item">
+        <span class="pct">20%</span>
+        <p class="label">Promoção<br><em style="color:rgba(255,255,255,0.3)">planos, ofertas</em></p>
+      </div>
+      <div class="formula-item" style="border: 1px solid rgba(201,168,76,0.35); background: rgba(201,168,76,0.08);">
+        <span class="pct" style="color:var(--gold-light)">15%</span>
+        <p class="label" style="color:var(--gold-light)">Estrutura<br><em style="color:rgba(201,168,76,0.5)">tour, equipamentos</em></p>
+      </div>
+      <div class="formula-item">
+        <span class="pct">5%</span>
+        <p class="label">Bastidor<br><em style="color:rgba(255,255,255,0.3)">equipe, dia a dia</em></p>
+      </div>
+    </div>
+    <p style="font-size:11px; color:rgba(201,168,76,0.6); margin-top:16px; text-align:center; letter-spacing:0.5px">★ Novo — sugestão do cliente incluída</p>
+  </div>
+</section>
+
+<!-- CHECKLIST -->
+<section class="checklist-section">
+  <p class="section-tag">Plano de Ação</p>
+  <h2 class="section-title">O Que Fazer Agora</h2>
+
+  <div class="check-group">
+    <p class="check-group-title">🔴 Prioridade Alta — Esta semana</p>
+
+    <div class="check-item" onclick="this.classList.toggle('done')">
+      <div class="check-box">✓</div>
+      <div class="check-text">
+        <strong>Reescrever a bio</strong>
+        <span>Incluir cidade, modalidades, preço e CTA claro</span>
+      </div>
+      <span class="check-priority p-alta">ALTA</span>
+    </div>
+
+    <div class="check-item" onclick="this.classList.toggle('done')">
+      <div class="check-box">✓</div>
+      <div class="check-text">
+        <strong>Postar 1 depoimento de aluno</strong>
+        <span>Vídeo curto ou print de mensagem real com resultado</span>
+      </div>
+      <span class="check-priority p-alta">ALTA</span>
+    </div>
+
+    <div class="check-item" onclick="this.classList.toggle('done')">
+      <div class="check-box">✓</div>
+      <div class="check-text">
+        <strong>Criar Reel de apresentação</strong>
+        <span>Tour pela estrutura da academia com música animada</span>
+      </div>
+      <span class="check-priority p-alta">ALTA</span>
+    </div>
+  </div>
+
+  <div class="check-group">
+    <p class="check-group-title">🟡 Prioridade Média — Este mês</p>
+
+    <div class="check-item" onclick="this.classList.toggle('done')">
+      <div class="check-box">✓</div>
+      <div class="check-text">
+        <strong>Criar destaque "Resultados"</strong>
+        <span>Compilar transformações e depoimentos em um destaque</span>
+      </div>
+      <span class="check-priority p-media">MÉDIA</span>
+    </div>
+
+    <div class="check-item" onclick="this.classList.toggle('done')">
+      <div class="check-box">✓</div>
+      <div class="check-text">
+        <strong>Padronizar templates de post</strong>
+        <span>Criar 3 modelos fixos no Canva com a identidade da marca</span>
+      </div>
+      <span class="check-priority p-media">MÉDIA</span>
+    </div>
+
+    <div class="check-item" onclick="this.classList.toggle('done')">
+      <div class="check-box">✓</div>
+      <div class="check-text">
+        <strong>Publicar 3x por semana mínimo</strong>
+        <span>Consistência é mais importante que perfeição</span>
+      </div>
+      <span class="check-priority p-media">MÉDIA</span>
+    </div>
+
+    <div class="check-item" onclick="this.classList.toggle('done')">
+      <div class="check-box">✓</div>
+      <div class="check-text">
+        <strong>Usar hashtags locais</strong>
+        <span>#academiaIpu #ipuce #fitness #nordeste</span>
+      </div>
+      <span class="check-priority p-media">MÉDIA</span>
+    </div>
+
+    <div class="check-item" onclick="this.classList.toggle('done')" style="background: rgba(201,168,76,0.04); border-radius: 8px; padding: 12px 8px; border: 1px solid rgba(201,168,76,0.2); margin-top: 8px;">
+      <div class="check-box" style="border-color: rgba(201,168,76,0.6);">✓</div>
+      <div class="check-text">
+        <strong style="color:var(--gold-light)">🎥 Vídeo de Tour pela Estrutura — 2x/mês</strong>
+        <span>Mostrar equipamentos, espaços, ambiente e funcionamento da academia. Grave em horário cheio para transmitir movimento e energia. Formato ideal: Reel de 30–45 seg com legenda "Vem conhecer a gente!"</span>
+      </div>
+      <span class="check-priority p-media">MÉDIA</span>
+    </div>
+  </div>
+
+  <div class="check-group">
+    <p class="check-group-title">🟢 Prioridade Baixa — Próximo trimestre</p>
+
+    <div class="check-item" onclick="this.classList.toggle('done')">
+      <div class="check-box">✓</div>
+      <div class="check-text">
+        <strong>Colaborar com @drabeatrizpontes</strong>
+        <span>Posts conjuntos aumentam autoridade e alcance</span>
+      </div>
+      <span class="check-priority p-baixa">BAIXA</span>
+    </div>
+
+    <div class="check-item" onclick="this.classList.toggle('done')">
+      <div class="check-box">✓</div>
+      <div class="check-text">
+        <strong>Parceria com influenciadores locais</strong>
+        <span>Micro-influenciadores de Ipu têm audiência mais qualificada</span>
+      </div>
+      <span class="check-priority p-baixa">BAIXA</span>
+    </div>
+
+    <div class="check-item" onclick="this.classList.toggle('done')">
+      <div class="check-box">✓</div>
+      <div class="check-text">
+        <strong>Impulsionar posts de resultado</strong>
+        <span>Tráfego pago para depoimentos converte muito bem</span>
+      </div>
+      <span class="check-priority p-baixa">BAIXA</span>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO ATUAL -->
+<section style="padding-top:0; padding-bottom: 80px;">
+  <p class="section-tag">Diagnóstico</p>
+  <h2 class="section-title" style="margin-bottom:24px">Situação Atual</h2>
+
+  <div class="progress-section">
+    <div class="progress-item">
+      <div class="progress-header">
+        <span>Identidade Visual</span>
+        <span>80%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill w-80" style="animation-delay:0.1s"></div>
+      </div>
+    </div>
+
+    <div class="progress-item">
+      <div class="progress-header">
+        <span>Bio e Posicionamento</span>
+        <span>25%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill w-25" style="animation-delay:0.2s"></div>
+      </div>
+    </div>
+
+    <div class="progress-item">
+      <div class="progress-header">
+        <span>Prova Social</span>
+        <span>30%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill w-25" style="animation-delay:0.3s; width:30%"></div>
+      </div>
+    </div>
+
+    <div class="progress-item">
+      <div class="progress-header">
+        <span>Conteúdo Educativo</span>
+        <span>20%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" style="animation-delay:0.4s; width:20%"></div>
+      </div>
+    </div>
+
+    <div class="progress-item">
+      <div class="progress-header">
+        <span>Frequência de Posts</span>
+        <span>50%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" style="animation-delay:0.5s; width:50%"></div>
+      </div>
+    </div>
+
+    <div class="progress-item">
+      <div class="progress-header">
+        <span>Engajamento e CTA</span>
+        <span>40%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill w-40" style="animation-delay:0.6s"></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(201,168,76,0.04)); border: 1px solid rgba(201,168,76,0.3); border-radius: 16px; padding: 28px 20px; text-align: center;">
+    <p style="font-family:'Bebas Neue',sans-serif; font-size: 48px; color: var(--gold); line-height:1">41%</p>
+    <p style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 6px;">Potencial de reconhecimento atual</p>
+    <p style="font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 12px; line-height:1.7">Aplicando as melhorias deste guia,<br>o potencial pode chegar a <strong style="color:var(--gold-light)">85%+</strong></p>
+  </div>
+</section>
+
+<footer>
+  Guia produzido para <strong>@centerlifemais</strong><br>
+  A mudança que o seu futuro precisa 💙
+</footer>
+
+</body>
+</html>
